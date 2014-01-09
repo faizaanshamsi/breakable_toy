@@ -36,6 +36,8 @@ gem 'unicorn'
 
 gem 'simple_form'
 
+gem 'foundation-rails'
+
 group :test, :development do
   gem 'rspec-rails'
   gem 'pry-rails'
