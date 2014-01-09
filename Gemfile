@@ -32,6 +32,8 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'unicorn'
+
 gem 'simple_form'
 
 group :test, :development do
@@ -42,6 +44,7 @@ group :test, :development do
   gem 'factory_girl_rails'
   gem 'launchy'
   gem 'capybara'
+  gem 'dotenv-rails'
 end
 
 group :development do
