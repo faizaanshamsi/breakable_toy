@@ -19,7 +19,7 @@ development:
   encoding: unicode
   database: breakable_toy_development
   pool: 5
-  username: breakable_toy
+  username:
   password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -48,7 +48,7 @@ test:
   encoding: unicode
   database: breakable_toy_test
   pool: 5
-  username: breakable_toy
+  username:
   password:
 
 production:
@@ -56,5 +56,5 @@ production:
   encoding: unicode
   database: breakable_toy_production
   pool: 5
-  username: breakable_toy
+  username:
   password:

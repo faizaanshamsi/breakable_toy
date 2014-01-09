@@ -32,14 +32,21 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'simple_form'
 
-# Use unicorn as the app server
-# gem 'unicorn'
+group :test, :development do
+  gem 'rspec-rails'
+  gem 'pry-rails'
+  gem 'shoulda-matchers'
+  gem 'valid_attribute'
+  gem 'factory_girl_rails'
+  gem 'launchy'
+  gem 'capybara'
+end
 
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+group :development do
+  gem 'meta_request'
+  gem 'binding_of_caller'
+  gem 'better_errors'
+  gem 'quiet_assets'
+end
