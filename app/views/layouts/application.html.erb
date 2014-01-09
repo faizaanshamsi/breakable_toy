@@ -12,8 +12,16 @@
   </head>
 
   <body>
-    <%= render 'layouts/authentication_nav' %>
-    <%= yield %>
+    <div class="row">
+      <div class="small-12 columns">
+        <%= render 'layouts/authentication_nav' %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 columns">
+        <%= yield %>
+      </div>
+    </div>
     <%= javascript_include_tag "application" %>
   </body>
 </html>
