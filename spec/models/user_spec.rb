@@ -9,6 +9,7 @@ describe User do
     it { should have_db_column(:height).of_type(:integer) }
     it { should have_db_column(:weight).of_type(:integer) }
     it { should have_db_column(:age).of_type(:integer) }
+    it { should have_db_column(:date_of_birth).of_type(:date) }
   end
 
   describe "Validation Tests" do
