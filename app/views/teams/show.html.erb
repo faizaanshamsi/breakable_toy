@@ -1,0 +1,5 @@
+<%= @team.name %>
+
+<% @team.users.each do |user| %>
+  <%= user.first_name %>
+<% end %>

@@ -19,10 +19,9 @@ feature "User creates a team", %q{
     visit new_team_path
     fill_in "Team name", with: "Best Team"
 
-    click_on "Create Team, Captain"
-
+    click_on "Create Your Team, Captain"
     expect(page).to have_content "Best Team"
-    expect(page).to have_content "#{user.name}"
+    expect(page).to have_content "#{user.first_name}"
     expect(Team.all.count).to eql(count + 1)
   end
 
