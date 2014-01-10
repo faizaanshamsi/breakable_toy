@@ -14,6 +14,8 @@
     <%= f.input :email, required:  true, autofocus:  true %>
     <%= f.input :password, required:  true %>
     <%= f.input :password_confirmation, label: 'Confirm password', required:  true %>
+    <%= f.label :profile_picture, 'Profile Picture' %>
+    <%= f.file_field :profile_picture %>
   </div>
 
   <div class="form-actions">
