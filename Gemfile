@@ -13,6 +13,11 @@ gem 'simple_form'
 gem 'foundation-rails'
 gem 'devise'
 
+#Uploading
+gem 'carrierwave'
+gem "fog", "~> 1.3.1"
+gem 'mini_magick'
+
 group :test, :development do
   gem 'rspec-rails'
   gem 'pry-rails'

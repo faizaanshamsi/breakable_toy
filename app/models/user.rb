@@ -8,4 +8,6 @@ class User < ActiveRecord::Base
   validates_numericality_of :weight, :height
   validates_numericality_of :age, only_integer: true
   validates :gender, presence: true, inclusion: { in: ['Male', 'Female'] }
+
+  mount_uploader :profile_picture, ProfilePictureUploader
 end

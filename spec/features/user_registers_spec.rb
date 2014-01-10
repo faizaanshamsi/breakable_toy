@@ -8,7 +8,9 @@ feature "User signs up", %q{
 
   # Acceptance Criteria:
   # User must provide first name, last name, age, height, weight, gender, dob, email
-  # TODO User may optionally upload an image
+  # User can optionally include a photo of myself as part of myregistration
+  # If User supply a photo, it must be a jpg, png, or gif
+  # If User supply a photo, it cannot exceed 5MB
   # TODO User must confirm via email to be signed up
 
   scenario "sign up with valid input" do
@@ -25,9 +27,11 @@ feature "User signs up", %q{
     fill_in 'Email', with: 'bob_smith@example.com'
     fill_in 'Password', with: 'password'
     fill_in 'Confirm password', with: 'password'
+    attach_file 'Profile Picture', Rails.root.join('spec/file_fixtures/profile.jpg')
     click_on 'Submit'
 
     expect(page).to have_content("Logged in as bob_smith@example.com")
+    expect(User.last.profile_picture.url).to be_present
   end
 
   scenario "sign up with invalid input" do
