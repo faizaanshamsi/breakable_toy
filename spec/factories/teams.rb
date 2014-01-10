@@ -3,6 +3,7 @@
 FactoryGirl.define do
   factory :team do
     name "MyString"
-    captain_id 1
+    captain_id 4
+
   end
 end

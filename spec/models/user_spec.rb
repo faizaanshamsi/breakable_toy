@@ -27,4 +27,12 @@ describe User do
   describe "Association Tests" do
     it { should belong_to(:team) }
   end
+
+  describe 'determine captainship' do
+    user = FactoryGirl.create(:user)
+    team = FactoryGirl.create(:team, captain_id: user.id)
+    it 'should check if user is a captain' do
+      expect(user.captain?).to be_true
+    end
+  end
 end
