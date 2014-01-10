@@ -47,5 +47,10 @@ class ProfilePictureUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
+  if Rails.env.production? || Rails.env.development?
+    storage :fog
+  else
+    storage :file
+  end
 
 end
