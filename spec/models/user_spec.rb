@@ -29,7 +29,7 @@ describe User do
   end
 
   describe 'determine captainship' do
-    user = FactoryGirl.create(:user)
+    user = FactoryGirl.create(:user, email: 'haha@example.com')
     team = FactoryGirl.create(:team, captain_id: user.id)
     it 'should check if user is a captain' do
       expect(user.captain?).to be_true

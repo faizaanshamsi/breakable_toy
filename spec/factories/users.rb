@@ -8,7 +8,7 @@ FactoryGirl.define do
     weight 200
     gender 'Male'
     date_of_birth '11/12/2003'
-    sequence(:email) { |n| "person#{n}@example.com" }
+    sequence(:email, 100) { |n| "person#{n}@example.com" }
     age 33
     password '343343343433'
   end

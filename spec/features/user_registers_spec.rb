@@ -44,7 +44,7 @@ feature "User signs up", %q{
   end
 
   scenario "user already exists" do
-      user = FactoryGirl.create(:user)
+      user = FactoryGirl.create(:user, email: 'heloo@example.com')
       visit root_path
       click_on 'Sign up'
 
@@ -55,7 +55,7 @@ feature "User signs up", %q{
       fill_in 'Weight', with: 200
       choose 'Male'
       fill_in 'Date of Birth', with: '11/12/2003'
-      fill_in 'Email', with: 'bob_smith@example.com'
+      fill_in 'Email', with: 'heloo@example.com'
       fill_in 'Password', with: 'wwlwkjwarerj'
       fill_in 'Confirm password', with: 'wwlwkjwarerj'
       click_on 'Submit'
