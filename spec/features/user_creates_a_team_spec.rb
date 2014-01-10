@@ -13,7 +13,7 @@ feature "User creates a team", %q{
 
   scenario 'Authenticated user creates a team and becomes captain' do
     count = Team.all.count
-    user = FactoryGirl.create(:user)
+    user = FactoryGirl.create(:user, email: 'lol@lol.com')
     sign_in_as(user)
 
     visit new_team_path
