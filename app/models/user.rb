@@ -10,4 +10,6 @@ class User < ActiveRecord::Base
   validates :gender, presence: true, inclusion: { in: ['Male', 'Female'] }
 
   mount_uploader :profile_picture, ProfilePictureUploader
+
+  belongs_to :team, inverse_of: :users
 end

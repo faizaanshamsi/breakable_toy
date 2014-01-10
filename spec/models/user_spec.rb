@@ -24,4 +24,7 @@ describe User do
     it { should validate_numericality_of(:age).only_integer }
   end
 
+  describe "Association Tests" do
+    it { should belong_to(:team) }
+  end
 end

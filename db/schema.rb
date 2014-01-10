@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140110165104) do
+ActiveRecord::Schema.define(version: 20140110200221) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "teams", force: true do |t|
+    t.string   "name",       null: false
+    t.integer  "captain_id", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -37,6 +44,7 @@ ActiveRecord::Schema.define(version: 20140110165104) do
     t.integer  "weight",                              null: false
     t.date     "date_of_birth",                       null: false
     t.string   "profile_picture"
+    t.integer  "team_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
