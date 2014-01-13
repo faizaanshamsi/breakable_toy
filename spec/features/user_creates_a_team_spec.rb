@@ -23,6 +23,7 @@ feature "User creates a team", %q{
     expect(page).to have_content "Best Team"
     expect(page).to have_content "#{user.first_name}"
     expect(Team.all.count).to eql(count + 1)
+    expect(user.captain?).to be_true
   end
 
   # scenario 'Unauthenticated user attempts to create a team'
