@@ -15,7 +15,9 @@ feature "User signs up", %q{
 
   scenario "sign up with valid input" do
     visit root_path
-    click_on 'Sign up'
+    within('.nav_sign_up') do
+      click_on 'Sign up'
+    end
 
     fill_in 'First Name', with: 'Bob'
     fill_in 'Last Name', with: 'Smith'
@@ -36,7 +38,9 @@ feature "User signs up", %q{
 
   scenario "sign up with invalid input" do
     visit root_path
-    click_on 'Sign up'
+    within('.nav_sign_up') do
+      click_on 'Sign up'
+    end
 
     click_on 'Submit'
 
@@ -46,7 +50,10 @@ feature "User signs up", %q{
   scenario "user already exists" do
       user = FactoryGirl.create(:user, email: 'heloo@example.com')
       visit root_path
-      click_on 'Sign up'
+      save_and_open_page
+      within('.nav_sign_up') do
+        click_on 'Sign up'
+      end
 
       fill_in 'First Name', with: 'Bob'
       fill_in 'Last Name', with: 'Smith'

@@ -26,7 +26,12 @@ feature "User creates a team", %q{
     expect(user.captain?).to be_true
   end
 
-  # scenario 'Unauthenticated user attempts to create a team'
+  scenario 'Unauthenticated user gets redirected to sign in page' do
+    user = FactoryGirl.create(:user, email: 'lol@lol.com')
+    visit new_team_path
+
+    expect(page).to have_content "Email Password"
+  end
 
   # scenario 'User already belongs to a team' do
 
