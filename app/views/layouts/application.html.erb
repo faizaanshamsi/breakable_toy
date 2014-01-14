@@ -12,6 +12,9 @@
   </head>
 
   <body>
+    <% flash.each do |name, msg| -%>
+      <%= content_tag :div, msg, class: name %>
+    <% end -%>
     <div class="row">
       <div class="small-12 columns nav_sign_up">
         <%= render 'layouts/authentication_nav' %>

@@ -16,4 +16,8 @@ class User < ActiveRecord::Base
   def captain?
     Team.where(captain_id: self.id).empty? ? false : true
   end
+
+  def has_team?
+    self.team_id != nil ? true : false
+  end
 end

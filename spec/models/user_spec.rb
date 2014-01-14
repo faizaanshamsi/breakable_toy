@@ -35,4 +35,19 @@ describe User do
       expect(user.captain?).to be_true
     end
   end
+
+  describe 'determine team' do
+    it 'should return true if user has a team' do
+      team = FactoryGirl.create(:team)
+      user = FactoryGirl.create(:user, team_id: team.id)
+
+      expect(user.has_team?).to be_true
+    end
+
+    it 'should return false if user does not have a team' do
+      user = FactoryGirl.create(:user, team_id: nil)
+
+      expect(user.has_team?).to be_false
+    end
+  end
 end

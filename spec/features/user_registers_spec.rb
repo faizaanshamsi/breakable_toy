@@ -50,7 +50,6 @@ feature "User signs up", %q{
   scenario "user already exists" do
       user = FactoryGirl.create(:user, email: 'heloo@example.com')
       visit root_path
-      save_and_open_page
       within('.nav_sign_up') do
         click_on 'Sign up'
       end

@@ -7,9 +7,14 @@ describe Team do
   end
 
   describe "Validation Tests" do
+
     it { should have_valid(:name).when("faizaan") }
     it { should_not have_valid(:name).when(nil, "") }
     it { should validate_numericality_of(:captain_id).only_integer }
+    it 'should validate_uniqueness_of name' do
+      Team.create(captain_id: 4, name: 'team')
+      should validate_uniqueness_of :name
+    end
   end
 
   describe "Association Tests" do

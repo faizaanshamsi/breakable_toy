@@ -1,8 +1,12 @@
 class TeamsController < ApplicationController
-  before_filter :authenticate_user!
 
   def new
-    @team = Team.new
+    if current_user.has_team?
+      flash[:error] = 'You are already part of a team'
+      redirect_to team_path(id: current_user.team_id)
+    else
+      @team = Team.new
+    end
   end
 
   def create
