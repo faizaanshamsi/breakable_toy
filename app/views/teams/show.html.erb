@@ -1,9 +1,5 @@
 <%= @team.name %>
 
-
-<%= link_to 'Invite Someone', new_user_invitation_path %>
-
-
 <% @team.users.each do |user| %>
   <%= user.first_name %>
 <% end %>

@@ -11,6 +11,5 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << [:first_name, :last_name, :age, :weight, :gender, :date_of_birth, :height, :profile_picture ]
-    devise_parameter_sanitizer.for(:accept_invitation) << [:first_name, :last_name, :age, :weight, :gender, :date_of_birth, :height, :profile_picture, :password, :password_confirmation, :invitation_token ]
   end
 end

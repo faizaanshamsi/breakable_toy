@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :invitable, :database_authenticatable, :registerable,
+  devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
   validates_presence_of :first_name, :last_name
@@ -12,7 +12,6 @@ class User < ActiveRecord::Base
   mount_uploader :profile_picture, ProfilePictureUploader
 
   belongs_to :team, inverse_of: :users
-  has_many :invitations, class_name: self.to_s, as: :invited_by
 
   def captain?
     Team.where(captain_id: self.id).empty? ? false : true

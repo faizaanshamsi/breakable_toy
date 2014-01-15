@@ -12,7 +12,6 @@ gem 'unicorn'
 gem 'simple_form'
 gem 'foundation-rails'
 gem 'devise'
-gem 'devise_invitable', :github => 'scambra/devise_invitable'
 
 #Uploading
 gem 'carrierwave'
