@@ -12,10 +12,7 @@
   </head>
 
   <body>
-
-    <% flash.each do |name, msg| -%>
-    <div class="panel callout radius"><p><%= content_tag :div, msg, class: name %></p></div>
-    <% end -%>
+    <%= render 'layouts/flash_messages' %>
     <%= render 'layouts/authentication_nav' %>
     <div class="row">
       <div class="small-12 columns">

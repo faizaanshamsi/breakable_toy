@@ -1,24 +1,9 @@
-<div class="contain-to-grid">
-  <nav class="top-bar" data-topbar>
-    <ul class="title-area">
-      <li class="name">
-        <h1><a href="#">Breakable Toy</a></h1>
-      </li>
-      <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
-    </ul>
-
-    <section class="top-bar-section">
-      <!-- Right Nav Section -->
-      <ul class="right">
-        <% if user_signed_in? %>
-          <li class="active"><%= link_to 'Edit profile', edit_user_registration_path, class: :active %></li>
-          <li class="active"><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
-        <% else %>
-          <li class="active"><%= link_to "Sign up", new_user_registration_path %></li>
-          <li class="active"><%= link_to "Login", new_user_session_path %></li>
-        <% end %>
-      </ul>
-    </section>
-  </nav>
+<div class="nav_sign_up">
+  <% if user_signed_in? %>
+    <%= link_to 'Edit profile', edit_user_registration_path, class: :active %>
+    <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+  <% else %>
+    <%= link_to "Sign up", new_user_registration_path %>
+    <%= link_to "Login", new_user_session_path %>
+  <% end %>
 </div>
-

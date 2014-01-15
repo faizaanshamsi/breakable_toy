@@ -10,7 +10,6 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'unicorn'
 gem 'simple_form'
-gem 'foundation-rails'
 gem 'devise'
 
 #Uploading

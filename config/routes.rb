@@ -4,5 +4,5 @@ BreakableToy::Application.routes.draw do
   resources :users
   resources :teams
 
-  root 'users#index'
+  root 'teams#index'
 end
