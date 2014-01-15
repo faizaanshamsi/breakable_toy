@@ -17,7 +17,7 @@ feature "User creates a team", %q{
     visit teams_path
     click_on 'Join'
 
-    expect(User.last.team_id).to eq(Team.last.id)
+    expect(member.reload.team).to eq(team)
     expect(page).to have_content "You're a member of #{team.name}!"
     expect(page).to have_content "#{team.name}"
   end
