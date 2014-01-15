@@ -58,8 +58,8 @@ feature "User creates a team", %q{
     expect(page).to have_content "#{team.name}"
   end
 
-
-  scenario 'Max number of teams must not have been reached' do
-    #TODO -
-  end
+  #TODO -
+  # scenario 'Max number of teams must not have been reached' do
+  #
+  # end
 end
