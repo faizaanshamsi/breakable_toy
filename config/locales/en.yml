@@ -21,3 +21,7 @@
 
 en:
   hello: "Hello world"
+  user:
+    edit:
+      join_team_success: "You are now a member!"
+      join_team_error: "You can't join that team"

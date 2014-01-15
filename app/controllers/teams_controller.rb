@@ -1,5 +1,10 @@
 class TeamsController < ApplicationController
 
+  def index
+    @teams = Team.all
+    @user = current_user
+  end
+
   def new
     if current_user.has_team?
       flash[:error] = 'You are already part of a team'

@@ -1,0 +1,4 @@
+<h1>Teams:</h1><br>
+<% @teams.each do |team| %>
+  <p><%= team.name %> <%= link_to 'Join', edit_user_path(@user, team_id: team) %></p><br>
+<% end %>
