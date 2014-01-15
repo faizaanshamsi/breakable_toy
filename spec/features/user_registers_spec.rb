@@ -15,7 +15,7 @@ feature "User signs up", %q{
 
   scenario "sign up with valid input" do
     visit root_path
-    within('.nav_sign_up') do
+    within('.top-bar') do
       click_on 'Sign up'
     end
 
@@ -32,13 +32,13 @@ feature "User signs up", %q{
     attach_file 'Profile Picture', Rails.root.join('spec/file_fixtures/profile.jpg')
     click_on 'Submit'
 
-    expect(page).to have_content("Logged in as bob_smith@example.com")
+    expect(page).to have_content("Welcome!")
     expect(User.last.profile_picture.url).to be_present
   end
 
   scenario "sign up with invalid input" do
     visit root_path
-    within('.nav_sign_up') do
+    within('.top-bar') do
       click_on 'Sign up'
     end
 
@@ -50,7 +50,7 @@ feature "User signs up", %q{
   scenario "user already exists" do
       user = FactoryGirl.create(:user, email: 'heloo@example.com')
       visit root_path
-      within('.nav_sign_up') do
+      within('.top-bar') do
         click_on 'Sign up'
       end
 
