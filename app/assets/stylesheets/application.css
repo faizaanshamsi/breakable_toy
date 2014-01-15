@@ -11,7 +11,3 @@
  *= require_self
  *= require_tree .
  */
-
-.alert {
-  text-align: center;
-}
