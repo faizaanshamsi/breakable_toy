@@ -7,6 +7,7 @@ feature "User creates a team", %q{
 } do
 
   # Acceptance Criteria:
+  # A team is full if it has 5 users
   # A full team cannot be joined
   # I may browse teams that are not full and join one
 
@@ -27,8 +28,21 @@ feature "User creates a team", %q{
     user = FactoryGirl.create(:user, team_id: team.id)
     sign_in_as(user)
     visit teams_path
-    click_on 'Join'
 
-    expect(page).to have_content "You are already on a team!"
+    expect(page).to_not have_content "Join"
   end
+
+  scenario 'User tries to join a full team' do
+    team = FactoryGirl.create(:team)
+    user = FactoryGirl.create(:user)
+    FactoryGirl.create(:user)
+    5.times do
+      FactoryGirl.create(:user, team_id: team.id)
+    end
+    sign_in_as(user)
+    visit teams_path
+
+    expect(page).to_not have_content "Join"
+  end
+
 end

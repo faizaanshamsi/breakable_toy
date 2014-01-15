@@ -1,4 +1,8 @@
 <h1>Teams:</h1><br>
 <% @teams.each do |team| %>
-  <p><%= team.name %> <%= link_to 'Join', edit_user_path(@user, team_id: team) %></p><br>
+  <p><%= team.name %></p>
+  <% unless @user.has_team? %>
+    <%= link_to 'Join', edit_user_path(@user, team_id: team) %>
+  <% end %>
+  <br>
 <% end %>
