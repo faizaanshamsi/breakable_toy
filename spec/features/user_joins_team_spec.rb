@@ -41,7 +41,6 @@ feature "User creates a team", %q{
     end
     sign_in_as(user)
     visit teams_path
-
     expect(page).to_not have_content "Join"
   end
 

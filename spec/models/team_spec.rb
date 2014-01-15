@@ -21,4 +21,10 @@ describe Team do
     it { should have_one(:captain) }
     it { should have_many(:users) }
   end
+
+  describe "Class Methods" do
+    it 'should return maximum allowed team size' do
+      expect(Team.max_size).to eql(5)
+    end
+  end
 end

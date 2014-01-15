@@ -5,4 +5,8 @@ class Team < ActiveRecord::Base
 
   has_one :captain, class_name: 'User'
   has_many :users, inverse_of: :team
+
+  def self.max_size
+    5
+  end
 end

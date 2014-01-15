@@ -1,8 +1,11 @@
 <h1>Teams:</h1><br>
 <% @teams.each do |team| %>
   <p><%= team.name %></p>
-  <% unless @user.has_team? %>
+  <% unless @user.has_team? || (team.users.size >= Team.max_size) %>
     <%= link_to 'Join', edit_user_path(@user, team_id: team) %>
   <% end %>
   <br>
 <% end %>
+
+
+<!-- && team.users.size == Team.max_size -->
