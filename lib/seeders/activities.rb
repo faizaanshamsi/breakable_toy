@@ -1,7 +1,7 @@
 module Seeders
   module Activities
     def self.seed(datafile)
-
+      require 'csv'
       CSV.foreach(datafile, headers: true) do |row|
         Activity.find_or_create_by(name: row['name']) do |activity|
           activity.name = row['name']

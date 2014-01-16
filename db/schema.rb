@@ -17,11 +17,11 @@ ActiveRecord::Schema.define(version: 20140116161246) do
   enable_extension "plpgsql"
 
   create_table "activities", force: true do |t|
-    t.string   "name",                           null: false
-    t.float    "met",                            null: false
-    t.boolean  "cardiovascular", default: false
-    t.boolean  "bone_strength",  default: false
-    t.boolean  "resistance",     default: false
+    t.string   "name",           null: false
+    t.float    "met",            null: false
+    t.boolean  "cardiovascular"
+    t.boolean  "bone_strength"
+    t.boolean  "resistance"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
