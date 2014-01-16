@@ -13,4 +13,14 @@ class UserActivitiesController < ApplicationController
     end
   end
 
+  def destroy
+    @user_activity = UserActivity.find(params[:id])
+    if @user_activity.destroy
+      redirect_to user_path(current_user)
+    else
+      flash[:error] = "Could not destroy"
+      redirect_to user_path(current_user)
+    end
+  end
+
 end

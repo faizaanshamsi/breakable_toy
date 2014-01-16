@@ -1,0 +1,8 @@
+<h2>Activities:</h2>
+<% @activities.each do |activity| %>
+  <%= activity.name %>
+  <%= link_to " Remove #{activity.name}", user_activity_path(@user_activities.find_by(activity_id: activity.id)), action: :destroy, method: :delete %>
+<% end %>
+
+
+

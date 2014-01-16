@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature "User signs up", %q{
+feature "User chooses activity", %q{
   As an Authenticated User
   I can choose an activity
   So that I can earn accomplishments for that activity
