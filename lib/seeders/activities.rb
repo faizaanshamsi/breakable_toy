@@ -1,4 +1,3 @@
-require 'csv'
 module Seeders
   module Activities
     def self.seed(datafile)
