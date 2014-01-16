@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :activity do
-    name "MyString"
+    name "Activity"
     met 1.5
     cardiovascular false
     bone_strength false

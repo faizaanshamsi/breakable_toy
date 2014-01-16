@@ -1,0 +1,8 @@
+<h1>Activities:</h1><br>
+<% @activities.each do |activity| %>
+  <p><%= activity.name %></p>
+  <% unless @user.has_activity?(activity) %>
+    <%= link_to "Add #{activity.name}", edit_user_activity_path(activity) %>
+  <% end %>
+  <br>
+<% end %>

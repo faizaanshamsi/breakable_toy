@@ -26,6 +26,8 @@ describe User do
 
   describe "Association Tests" do
     it { should belong_to(:team) }
+    it { should have_many(:user_activities) }
+    it { should have_many(:activities).through(:user_activities) }
   end
 
   describe 'determine captainship' do

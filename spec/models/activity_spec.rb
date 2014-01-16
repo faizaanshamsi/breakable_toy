@@ -21,7 +21,8 @@ describe Activity do
   end
 
   describe "Association Tests" do
-    #after seeding
+    it { should have_many(:user_activities) }
+    it { should have_many(:users).through(:user_activities) }
   end
 
 end

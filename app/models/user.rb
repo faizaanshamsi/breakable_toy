@@ -20,4 +20,8 @@ class User < ActiveRecord::Base
   def has_team?
     self.team_id != nil ? true : false
   end
+
+  def has_activity?(activity)
+    #user.activities contains activity
+  end
 end

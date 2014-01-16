@@ -3,6 +3,8 @@ BreakableToy::Application.routes.draw do
 
   resources :users
   resources :teams
+  resources :activities
+  resources :user_activities
 
   root 'teams#index'
 end
