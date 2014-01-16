@@ -24,6 +24,6 @@ class User < ActiveRecord::Base
   end
 
   def has_activity?(activity)
-    #user.activities contains activity
+    self.activities.include?(activity)
   end
 end

@@ -1,6 +1,7 @@
 class UserActivitiesController < ApplicationController
 
   def edit
+    @user_activity = UserActivity.new
     @activity = Activity.find_by(params[:activity_id])
     @user_activity.activity_id = @activity.id
     @user_activity.user_id = current_user.id
