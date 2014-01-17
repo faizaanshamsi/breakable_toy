@@ -20,6 +20,7 @@ describe Team do
   describe "Association Tests" do
     it { should have_one(:captain) }
     it { should have_many(:users) }
+    it { should have_many(:points) }
   end
 
   describe "Class Methods" do
