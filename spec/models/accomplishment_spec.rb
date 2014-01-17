@@ -7,7 +7,7 @@ describe Accomplishment do
   end
 
   describe "Validation Tests" do
-    it { should validate_numericality_of(:user_activity_id).only_integer(:integer) }
+    it { should validate_numericality_of(:user_activity_id).only_integer }
     it { should validate_numericality_of(:duration).only_integer}
   end
 
