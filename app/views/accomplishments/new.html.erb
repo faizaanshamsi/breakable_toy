@@ -1,0 +1,14 @@
+<h2>Add Accomplishment</h2>
+
+<%= simple_form_for @accomplishment do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.hidden_field :activity_id, value: "#{@activity.id}" %>
+    <%= f.input :duration, label: 'Duration', required:  true %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Submit" %>
+  </div>
+<% end %>
