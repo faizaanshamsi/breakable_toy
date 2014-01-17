@@ -32,5 +32,3 @@ feature "User chooses activity", %q{
   end
 
 end
-
-
