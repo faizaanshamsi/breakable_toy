@@ -28,7 +28,6 @@ describe User do
     it { should belong_to(:team) }
     it { should have_many(:user_activities) }
     it { should have_many(:activities).through(:user_activities) }
-    it { should have_many(:accomplishments).through(:user_activities) }
     it { should have_many(:points) }
   end
 

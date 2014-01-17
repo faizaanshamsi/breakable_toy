@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
   belongs_to :team, inverse_of: :users
   has_many :user_activities, dependent: :destroy
   has_many :activities, through: :user_activities
+  has_many :points, inverse_of: :user
 
   def captain?
     Team.where(captain_id: self.id).empty? ? false : true
