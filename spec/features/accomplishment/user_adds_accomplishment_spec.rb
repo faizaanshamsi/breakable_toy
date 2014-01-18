@@ -24,6 +24,6 @@ feature "User adds accomplishment", %q{
 
     expect(page).to have_content "#{activity.name}"
     expect(user.reload.points.count).to eql(1)
-    expect(accomplishments.count).to eql(1)
+    expect(user.accomplishments.count).to eql(1)
   end
 end

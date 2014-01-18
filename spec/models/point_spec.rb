@@ -10,9 +10,6 @@ describe Point do
 
   describe "Validation Tests" do
     it { should validate_numericality_of(:quantity).only_integer }
-    it { should validate_presence_of(:user) }
-    it { should validate_presence_of(:team) }
-    it { should validate_presence_of(:accomplishment) }
   end
 
   describe "Association Tests" do
