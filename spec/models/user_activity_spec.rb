@@ -8,10 +8,13 @@ describe UserActivity do
 
   describe "Validation Tests" do
 
-    it { should validate_presence_of(:user_id) }
-    it { should validate_presence_of(:activity_id) }
+    it { should validate_presence_of(:user) }
+    it { should validate_presence_of(:activity) }
     it 'should validate_uniqueness_of each pair' do
-      UserActivity.create!(user_id: 4, activity_id: 4)
+      # user = FactoryGirl.create(:user)
+      # activity = FactoryGirl.create(:activity)
+      # UserActivity.create!(user: user, activity: activity)
+      FactoryGirl.create(:user_activity)
       should validate_uniqueness_of(:user_id).scoped_to(:activity_id)
     end
   end

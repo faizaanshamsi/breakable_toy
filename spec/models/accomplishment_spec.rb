@@ -14,7 +14,7 @@ describe Accomplishment do
   describe "Association Tests" do
     it { should belong_to(:user_activity) }
     it { should have_many(:points) }
-
+    it { should belong_to(:user) }
   end
 
 end

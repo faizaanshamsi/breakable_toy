@@ -29,6 +29,7 @@ describe User do
     it { should have_many(:user_activities) }
     it { should have_many(:activities).through(:user_activities) }
     it { should have_many(:points) }
+    it { should have_many(:accomplishments) }
   end
 
   describe 'determine captainship' do
