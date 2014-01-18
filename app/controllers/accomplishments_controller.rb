@@ -8,7 +8,6 @@ class AccomplishmentsController < ApplicationController
   def create
     @user_activity = UserActivity.find_by(activity_id: params[:accomplishment][:activity_id], user_id: current_user.id)
     @accomplishment = Accomplishment.new(user_activity_id: @user_activity.id, duration: accomplishment_params[:duration], user: current_user)
-    #NEED TO CREATE POINT FORMULA
     if @accomplishment.save
       @point = @accomplishment.points.build(quantity: 100, user: current_user, team: current_user.team)
       @point.save

@@ -9,12 +9,10 @@
   </head>
 
   <body>
+    <%= render 'layouts/nav' %>
     <div class="container">
       <div class="row">
         <%= render 'layouts/flash_messages' %>
-      </div>
-      <div class="row">
-        <%= render 'layouts/authentication_nav' %>
       </div>
       <div class="row">
         <%= yield %>
