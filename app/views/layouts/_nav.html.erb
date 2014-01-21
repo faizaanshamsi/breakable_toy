@@ -1,7 +1,24 @@
 <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
   <!-- Sign Up and Logout -->
-  <div class="nav_sign_up container">
-    <ul class="nav navbar-nav navbar-right">
+  <div class="container">
+    <ul class="nav navbar-nav navbar-left">
+      <li>
+          <%= link_to 'My Team', '#', class: :active %>
+      </li>
+      <li>
+          <%= link_to 'Leaderboard', '#', class: :active %>
+      </li>
+      <li>
+          <%= link_to 'My Stats', '#', class: :active %>
+      </li>
+      <li>
+          <%= link_to 'Activites', '#', class: :active %>
+      </li>
+      <li>
+          <%= link_to 'My Profile', '#', class: :active %>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right nav_sign_up">
       <% if user_signed_in? %>
         <li>
           <%= link_to 'Edit profile', edit_user_registration_path, class: :active %>
