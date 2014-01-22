@@ -27,5 +27,12 @@ describe Team do
     it 'should return maximum allowed team size' do
       expect(Team.max_size).to eql(5)
     end
+
+    it 'should return total points' do
+      team = FactoryGirl.create(:team)
+      Point.create(quantity: 100, team_id: team.id)
+
+      expect(team.total_points).to eql(100)
+    end
   end
 end

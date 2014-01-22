@@ -10,4 +10,8 @@ class Team < ActiveRecord::Base
   def self.max_size
     5
   end
+
+  def total_points
+    sum = points.all.inject(0) { |sum, point| sum + point.quantity }
+  end
 end
