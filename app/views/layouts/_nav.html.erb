@@ -1,20 +1,26 @@
 <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
   <!-- Sign Up and Logout -->
   <div class="container">
-    <ul class="nav navbar-nav navbar-left">
-      <li>
-          <%= link_to 'My Team', '#', class: :active %>
-      </li>
-      <li>
-          <%= link_to 'My Profile', '#', class: :active %>
-      </li>
-      <li>
-          <%= link_to 'My Stats', '#', class: :active %>
-      </li>
-      <li>
-          <%= link_to 'Leaderboard', '#', class: :active %>
-      </li>
-    </ul>
+    <% unless devise_controller? %>
+      <ul class="nav navbar-nav navbar-left">
+        <li>
+            <% if current_user.team != nil %>
+              <%= link_to 'My Team', "team_path(current_user.team)", class: :active %>
+            <% else %>
+              <%= link_to 'Join Team', teams_path, class: :active %>
+            <% end %>
+        </li>
+        <li>
+            <%= link_to 'My Profile', user_path(current_user), class: :active %>
+        </li>
+        <li>
+            <%= link_to 'My Stats', '#', class: :active %>
+        </li>
+        <li>
+            <%= link_to 'Leaderboard', teams_path, class: :active %>
+        </li>
+      </ul>
+    <% end %>
     <ul class="nav navbar-nav navbar-right nav_sign_up">
       <% if user_signed_in? %>
         <li>

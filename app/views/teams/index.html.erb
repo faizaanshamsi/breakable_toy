@@ -6,3 +6,6 @@
   <% end %>
   <br>
 <% end %>
+<% unless @user.has_team? %>
+  <%= link_to 'Create Your Own', new_team_path, class: "btn btn-lg btn-success" %>
+<% end %>
