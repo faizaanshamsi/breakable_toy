@@ -1,18 +1,14 @@
-    <% unless current_user == nil %>
-        <li>
-            <% if current_user.team != nil %>
-              <%= link_to 'My Team', team_path(current_user.team), class: :active %>
-            <% else %>
-              <%= link_to 'Join Team', teams_path, class: :active %>
-            <% end %>
-        </li>
-        <li>
-            <%= link_to 'My Profile', user_path(current_user), class: :active %>
-        </li>
-        <li>
-            <%= link_to 'All Teams', teams_path, class: :active %>
-        </li>
-    <% end %>
+<nav class="top-bar" data-topbar>
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="#">Breakable Toy</a></h1>
+    </li>
+    <li class="toggle-topbar menu-icon"><a href="#">Nav</a></li>
+  </ul>
+
+  <section class="top-bar-section">
+    <!-- Right Nav Section -->
+    <ul class="right">
       <% if user_signed_in? %>
         <li>
           <%= link_to 'Edit profile', edit_user_registration_path, class: :active %>
@@ -28,3 +24,25 @@
           <%= link_to "Login", new_user_session_path %>
         </li>
       <% end %>
+    </ul>
+
+    <!-- Left Nav Section -->
+    <ul class="left">
+      <% unless current_user == nil %>
+        <li>
+            <% if current_user.team != nil %>
+              <%= link_to 'My Team', team_path(current_user.team), class: :active %>
+            <% else %>
+              <%= link_to 'Join Team', teams_path, class: :active %>
+            <% end %>
+        </li>
+        <li>
+            <%= link_to 'My Profile', user_path(current_user), class: :active %>
+        </li>
+        <li>
+            <%= link_to 'All Teams', teams_path, class: :active %>
+        </li>
+    <% end %>
+    </ul>
+  </section>
+</nav>
