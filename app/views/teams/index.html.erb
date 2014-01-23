@@ -1,14 +1,22 @@
 <h1>Teams:</h1><br>
   <% @teams.each do |team| %>
-        <%= image_tag "#{team.captain.profile_picture}", class: "captain-picture" %>
-        Captain: <%= team.captain.first_name %>
-          <%= team.name %><br>
-          <%= team.users.count %> Members <br><br>
-          <%= team.total_points %> Points <br><br>
+    <div class="row team">
+      <div class="small-5 columns">
+        <h3>Captain: <%= team.captain.first_name %></h3>
+        <%= image_tag "#{team.captain.profile_picture}", class: "captain-picture" %><br>
+
+      </div>
+      <div class="small-7 columns">
+          <h1><%= team.name %></h1><br>
+          <h2><%= team.users.count %> Members</h2> <br>
+          <h2><%= team.total_points %> Points</h3> <br>
         <% unless @user.has_team? || (team.users.size >= Team.max_size) %>
           <%= link_to 'Join', edit_user_path(@user, team_id: team), class: "#" %>
         <% end %>
+      </div>
+    </div>
   <% end %>
+
 <% unless @user.has_team? %>
   <%= link_to 'Create Your Own', new_team_path, class: "#" %>
 <% end %>
