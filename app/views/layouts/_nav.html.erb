@@ -1,9 +1,4 @@
-<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-  <div class="navbar-inner"
-  <!-- Sign Up and Logout -->
-  <div class="container">
     <% unless current_user == nil %>
-      <ul class="nav navbar-nav navbar-left">
         <li>
             <% if current_user.team != nil %>
               <%= link_to 'My Team', team_path(current_user.team), class: :active %>
@@ -15,11 +10,9 @@
             <%= link_to 'My Profile', user_path(current_user), class: :active %>
         </li>
         <li>
-            <%= link_to 'Leaderboard', teams_path, class: :active %>
+            <%= link_to 'All Teams', teams_path, class: :active %>
         </li>
-      </ul>
     <% end %>
-    <ul class="nav navbar-nav navbar-right nav_sign_up">
       <% if user_signed_in? %>
         <li>
           <%= link_to 'Edit profile', edit_user_registration_path, class: :active %>
@@ -35,7 +28,3 @@
           <%= link_to "Login", new_user_session_path %>
         </li>
       <% end %>
-    </ul>
-  </div>
-  </div>
-</nav>

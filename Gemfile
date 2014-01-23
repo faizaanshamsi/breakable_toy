@@ -11,8 +11,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'unicorn'
 gem 'simple_form'
 gem 'devise'
-gem 'bootstrap-sass', '~> 3.0.3.0'
-
+gem 'foundation-rails'
 #Uploading
 gem 'carrierwave'
 gem "fog", "~> 1.3.1"

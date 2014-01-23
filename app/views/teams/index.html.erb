@@ -1,22 +1,13 @@
 <h1>Teams:</h1><br>
   <% @teams.each do |team| %>
-    <div class="row team-cell">
-      <div class="col-sm-2 captain-box">
-        <h2>
-        Captain: <%= team.captain.first_name %>
         <%= image_tag "#{team.captain.profile_picture}", class: "captain-picture" %>
-        </h2>
-      </div>
-      <div class="col-sm-10">
-        <%= team.name %>
-        <%= team.users.count %> Members
-        <%= team.total_points %> Points
+        Captain: <%= team.captain.first_name %>
+          <%= team.name %><br>
+          <%= team.users.count %> Members <br><br>
+          <%= team.total_points %> Points <br><br>
         <% unless @user.has_team? || (team.users.size >= Team.max_size) %>
-          <%= link_to 'Join', edit_user_path(@user, team_id: team), class: "btn" %>
+          <%= link_to 'Join', edit_user_path(@user, team_id: team), class: "#" %>
         <% end %>
-      </div>
-    </div>
   <% end %>
 <% unless @user.has_team? %>
-  <%= link_to 'Create Your Own', new_team_path, class: "btn btn-lg btn-success" %>
-<% end %>
+  <%= link_to 'Create Your Own', new_team_path, class: "#" %>

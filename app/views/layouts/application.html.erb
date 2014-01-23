@@ -10,15 +10,8 @@
 
   <body>
     <%= render 'layouts/nav' %>
-    <div class="container">
-      <div class="row">
         <%= render 'layouts/flash_messages' %>
-      </div>
-      <div class="row">
         <%= yield %>
-      </div>
-    </div>
-
     <%= javascript_include_tag "application" %>
   </body>
 </html>

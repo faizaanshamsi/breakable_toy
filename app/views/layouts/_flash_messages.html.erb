@@ -1,7 +1,5 @@
 <% flash.each do |name, msg| -%>
-  <div class="alert alert-info">
     <h4>
       <%= content_tag :div, msg, class: name %>
     </h4>
-  </div>
 <% end -%>

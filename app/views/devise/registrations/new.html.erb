@@ -1,58 +1,20 @@
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <div class="panel-title">
-      <h2>Sign up</h2>
-    </div>
-  </div>
+<h2>Sign up</h2>
 
-  <div class="panel-body">
-    <%= simple_form_for(resource, as:  resource_name, url:  registration_path(resource_name)) do |f| %>
-      <%= f.error_notification %>
-      <div class="form-inputs">
-        <div class="form-group">
-          <%= f.input :first_name, label: 'First Name', required:  true %>
-        </div>
-        <div class="form-group">
-          <%= f.input :last_name, label: 'Last Name', required:  true %>
-        </div>
-        <div class="form-group">
-          <%= f.input :age, required:  true %>
-        </div>
-        <div class="form-group">
-          <%= f.input :height, required:  true %>
-        </div>
-        <div class="form-group">
-          <%= f.input :weight, required:  true %>
-        </div>
-        <div class="form-group">
-          <%= f.input :gender, collection: ['Male', 'Female'], as: :radio_buttons, required: true %>
-        </div>
-        <div class="form-group">
-          <%= f.input :date_of_birth, label: 'Date of Birth', as: :string, required:  true %>
-        </div>
-        <div class="form-group">
-          <%= f.input :email, required:  true, autofocus:  true %>
-        </div>
-        <div class="form-group">
-          <%= f.input :password, required:  true %>
-        </div>
-       <div class="form-group">
-          <%= f.input :password_confirmation, label: 'Confirm password', required:  true %>
-        </div>
-        <div class="form-group">
-          <%= f.label :profile_picture, 'Profile Picture' %>
-        </div>
-        <div class="form-group">
-          <%= f.file_field :profile_picture %>
-        </div>
-      </div>
-      <div class="form-actions">
-        <%= f.button :submit, "Submit" %>
-      </div>
-    <% end %>
-  </div>
+<%= simple_form_for(resource, as:  resource_name, url:  registration_path(resource_name)) do |f| %>
+  <%= f.error_notification %>
+      <%= f.input :first_name, label: 'First Name', required:  true %>
+      <%= f.input :last_name, label: 'Last Name', required:  true %>
+      <%= f.input :age, required:  true %>
+      <%= f.input :height, required:  true %>
+      <%= f.input :weight, required:  true %>
+      <%= f.input :gender, collection: ['Male', 'Female'], as: :radio_buttons, required: true %>
+      <%= f.input :date_of_birth, label: 'Date of Birth', as: :string, required:  true %>
+      <%= f.input :email, required:  true, autofocus:  true %>
+      <%= f.input :password, required:  true %>
+      <%= f.input :password_confirmation, label: 'Confirm password', required:  true %>
+      <%= f.label :profile_picture, 'Profile Picture' %>
+      <%= f.file_field :profile_picture %>
+    <%= f.button :submit, "Submit" %>
+<% end %>
 
-  <div class="panel-footer">
-    <%= render "devise/shared/links" %>
-  </div>
-</div>
+<%= render "devise/shared/links" %>
