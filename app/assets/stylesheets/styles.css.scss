@@ -4,7 +4,22 @@
 
 .team {
   background-color: rgba(18, 43, 185, 0.5);
-  padding: 5%;
-  border-radius: 5em;
+  padding: 1%;
+  border-radius: 1em;
   text-align: center;
 }
+
+.row.team {
+  margin-bottom: 3%;
+}
+
+.captain-picture {
+  max-height: 100px;
+}
+
+.team-profile {
+  border-right:thick double #EC602F;
+}
+ #team-index-heading {
+  text-align: center;
+ }
