@@ -1,5 +1,5 @@
-<div data-alert class="alert-box">
-  <% flash.each do |name, msg| -%>
+<% flash.each do |name, msg| -%>
+  <div data-alert class="alert-box">
     <%= content_tag :div, msg, class: name %>
-  <% end -%>
-</div>
+  </div>
+<% end -%>
