@@ -1,8 +1,8 @@
-<h2>Add Accomplishment</h2>
-
+<h2>Add accomplishment for <%= @activity.name %></h2>
+<br>
 <%= simple_form_for @accomplishment do |f| %>
   <%= f.error_notification %>
     <%= f.hidden_field :activity_id, value: "#{@activity.id}" %>
-    <%= f.input :duration, label: 'Duration', required:  true %>
+    <%= f.input :duration, label: 'How many minutes?', required:  true %>
     <%= f.button :submit, "Submit" %>
 <% end %>
