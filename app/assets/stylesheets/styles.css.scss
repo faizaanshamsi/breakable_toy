@@ -14,14 +14,12 @@
 
 .captain-picture {
   max-height: 10em;
-  border: 2px solid #16193B;
 
 }
 
 .profile-picture {
   max-height: 10em;
   border-radius: 2px;
-  border: 5px solid #16193B;
 }
 
 .team-profile {
@@ -49,4 +47,12 @@ h1 {
 }
 .button.small.right.remove-activity {
   background-color: red;
+}
+
+.row.video {
+  margin-top: 5em;
+}
+
+.row.video-text {
+  text-align: center;
 }
