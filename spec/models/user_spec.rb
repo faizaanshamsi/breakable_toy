@@ -54,4 +54,13 @@ describe User do
       expect(user.has_team?).to be_false
     end
   end
+
+  describe 'Class Methods' do
+    it 'should return total points' do
+      user = FactoryGirl.create(:user)
+      Point.create(quantity: 100, user_id: user.id)
+
+      expect(user.total_points).to eql(100)
+    end
+  end
 end

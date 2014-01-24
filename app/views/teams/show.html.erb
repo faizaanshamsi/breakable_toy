@@ -5,9 +5,23 @@
 </div>
 
 <div class="row">
-<% @team.users.each do |user| %>
-  <%= user.first_name %>
-<% end %>
+  <div class ="small-8 columns">
+    <h3>
+      Member Performance
+    </h3>
+    <br>
+    <% @team.users.each do |user| %>
+      <p>
+        <%= user.first_name %> <%= user.points %>
+      </p>
+      <br>
+    <% end %>
+  </div>
+  <div class="small-4 columns">
+    <h3>
+      Benchmarks
+    </h3>
+  </div>
 </div>
 
 
