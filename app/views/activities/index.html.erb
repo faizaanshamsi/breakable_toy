@@ -1,8 +1,15 @@
 <h1>Activities:</h1><br>
 <% @activities.each do |activity| %>
-  <p><%= activity.name %></p>
-  <% unless @user.has_activity?(activity) %>
-    <%= link_to "Add #{activity.name}", edit_user_activity_path(activity) %>
-  <% end %>
+  <p>
+
+    <% unless @user.has_activity?(activity) %>
+      If you add
+      <%= activity.name %>
+      you could earn X points per hour!
+      <%= link_to "Add #{activity.name}", edit_user_activity_path(activity), class: "button small right" %>
+    <% else %>
+      You already participate in <%= activity.name %>
+    <% end %>
+  </p>
   <br>
 <% end %>
