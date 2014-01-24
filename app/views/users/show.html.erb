@@ -1,10 +1,36 @@
-<h2>Activities:</h2>
-<% @activities.each do |activity| %>
-  <%= activity.name %>
-  <%= link_to " Add Accomplishment", new_accomplishment_path(activity_id: activity) %>
-  <%= link_to " Remove #{activity.name}", user_activity_path(@user_activities.find_by(activity_id: activity.id)), action: :destroy, method: :delete %>
-<% end %>
-<br>
-<%= link_to 'Add an Activity', activities_path, class: "btn btn-lg btn-success" %>
+<div class="row profile-head">
+  <div class="small-4 columns">
+    <%= image_tag "#{@user.profile_picture}", class: "profile-picture" %>
+  </div>
+  <div class="small-8 column">
+    <p>
+      Points
+    </p>
+    <p>
+      Consistency
+    </p>
+    <p>
+      Favorite Activity
+    </p>
+  </div>
+</div>
+
+<div class="row profile-activity">
+  <h3 id="profile-subheading">My Activities:</h3>
+  <% @activities.each do |activity| %>
+    <p>
+      I currently enjoy <%= activity.name %> regularly
+      <%= link_to "Remove", user_activity_path(@user_activities.find_by(activity_id: activity.id)), action: :destroy, method: :delete, class: "button small right remove-activity" %>
+      <%= link_to "Add New Accomplishment", new_accomplishment_path(activity_id: activity), class: "button small right" %>
+    </p>
+  <% end %>
+  <br>
+  <%= link_to 'Add an Activity', activities_path, class: "button wide" %>
+</div>
+
+<div class="row profile-accomplishment">
+  #Recent Accomplishments
+</div>
+
 
 
