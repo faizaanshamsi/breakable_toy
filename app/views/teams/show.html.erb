@@ -1,5 +1,13 @@
-<%= @team.name %>
+<div class="row">
+  <h1 class="team-heading">
+    <%= @team.name %>
+  </h1>
+</div>
 
+<div class="row">
 <% @team.users.each do |user| %>
   <%= user.first_name %>
 <% end %>
+</div>
+
+
