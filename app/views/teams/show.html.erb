@@ -5,22 +5,31 @@
 </div>
 
 <div class="row">
-  <div class ="small-8 columns">
+  <div class ="small-12 columns">
     <h3>
       Member Performance
     </h3>
     <br>
     <% @team.users.each do |user| %>
       <p>
-        <%= user.first_name %> <%= user.points %>
+        <%= user.first_name %> <%= user.last_name %> has completed
+         <%= user.accomplishments.count %> accomplishments
+        and earned <%= user.total_points %> points
       </p>
       <br>
     <% end %>
-  </div>
-  <div class="small-4 columns">
     <h3>
       Benchmarks
     </h3>
+    <p>
+      Rank:
+    </p>
+    <p>
+      Points this week:
+    </p>
+    <p>
+      #1 Team points this week:
+    </p>
   </div>
 </div>
 
