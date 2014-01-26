@@ -34,5 +34,29 @@ describe Team do
 
       expect(team.total_points).to eql(100)
     end
+
+    it 'should return rank by points' do
+      team_1 = FactoryGirl.create(:team)
+      team_2 = FactoryGirl.create(:team, name: "team2", captain_id: 3)
+      point = FactoryGirl.create(:point, team_id: team_2.id)
+
+      expect(team_1.rank).to eql(2)
+      expect(team_2.rank).to eql(1)
+    end
+
+    it 'should return points this week' do
+      team_1 = FactoryGirl.create(:team)
+      point = FactoryGirl.create(:point, team_id: team.id)
+      point_2 = FactoryGirl.create(:point, team_id: team.id, created_at: 1.month.ago)
+
+      expect(team_1.weekly_score).to eql(100)
+    end
+
+    it 'should return top scoring team weekly points' do
+      team_1 = FactoryGirl.create(:team)
+      point = FactoryGirl.create(:point, team_id: team_1.id)
+
+      expect(Team.leader_weekly_score).to eql(100)
+    end
   end
 end

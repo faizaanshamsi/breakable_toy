@@ -14,4 +14,8 @@ class Team < ActiveRecord::Base
   def total_points
     sum = points.all.inject(0) { |sum, point| sum + point.quantity }
   end
+
+  def rank
+
+  end
 end
