@@ -32,4 +32,8 @@ class User < ActiveRecord::Base
   def total_points
     sum = points.all.inject(0) { |sum, point| sum + point.quantity }
   end
+
+  def recent_accomplishments
+    accomplishments.where('created_at >= ?', 1.week.ago )
+  end
 end

@@ -62,5 +62,17 @@ describe User do
 
       expect(user.total_points).to eql(100)
     end
+
+    it 'should return a users consistency' do
+
+    end
+
+    it 'should return a users favorite activity' do
+
+    end
+
+    it 'should return a users most recent accomplishments' do
+
+    end
   end
 end

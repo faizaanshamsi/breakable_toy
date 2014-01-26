@@ -4,7 +4,7 @@
   </div>
   <div class="small-8 column">
     <p>
-      Points: <!-- Filler --> 300
+      Points: <%= @user.total_points %>
     </p>
     <p>
       Consistency <!-- Filler --> 5/7 Days per week
@@ -30,9 +30,16 @@
 
 <div class="row profile-accomplishment">
   Recent Accomplishments:
-<!-- Temporary Filler -->
-  <h4>I Biked for 30 minutes and earned 200 points!</h4>
-  <h4>I Swam for 35 minutes and earned 350 points!</h4>
+  <% @user.recent_accomplishments.each do |accomplishment| %>
+  <h3>
+    I earned
+    <%= accomplishment.points.first.quantity %>
+    points by
+    <%= accomplishment.user_activity.activity.name %>
+    on
+    <%= accomplishment.created_at.strftime("%A %B %d") %>
+  </h3>
+  <% end %>
 </div>
 
 
