@@ -5,6 +5,7 @@ class UserActivitiesController < ApplicationController
     @activity = Activity.find_by(params[:activity_id])
     @user_activity.activity_id = @activity.id
     @user_activity.user_id = current_user.id
+    binding.pry@
     if @user_activity.save
       redirect_to user_path(current_user)
     else
