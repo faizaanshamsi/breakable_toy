@@ -63,16 +63,23 @@ describe User do
       expect(user.total_points).to eql(100)
     end
 
-    it 'should return a users consistency' do
-
+    it "should return a user's consistency" do
+      #Average weekly participation x/7 days
     end
 
-    it 'should return a users favorite activity' do
+    it "should return a user's favorite activity" do
+      #Activity with most accomplishments
+      user = FactoryGirl.create(:user)
+      activity_1 = FactoryGirl.create(:activity)
+      activity_2 = FactoryGirl.create(:activity, name: 'activity2')
+      user_activity_1 = FactoryGirl.create(:user_activity, user_id: user.id, activity_id: activity_1.id)
+      user_activity_2 = FactoryGirl.create(:user_activity, user_id: user.id, activity_id: activity_2.id)
+      3.times do
+        FactoryGirl.create(:accomplishment, user_activity_id: user_activity_1.id, user_id: user.id)
+      end
+      FactoryGirl.create(:accomplishment, user_activity_id: user_activity_2.id, user_id: user.id)
 
-    end
-
-    it 'should return a users most recent accomplishments' do
-
+      expect(user.favorite_activity).to eql("Activity")
     end
   end
 end
