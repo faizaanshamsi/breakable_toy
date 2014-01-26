@@ -36,4 +36,14 @@ class User < ActiveRecord::Base
   def recent_accomplishments
     accomplishments.where('created_at >= ?', 1.week.ago )
   end
+
+  def favorite_activity
+    largest_hash_key(accomplishments.group(:user_activity).count).first.activity.name
+  end
+
+  private
+
+  def largest_hash_key(hash)
+    hash.max_by{|k,v| v}
+  end
 end
