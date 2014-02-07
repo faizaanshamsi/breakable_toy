@@ -1,10 +1,11 @@
 class UserActivitiesController < ApplicationController
 
-  def edit
+  def new
     @user_activity = UserActivity.new
-    @activity = Activity.find_by(params[:activity_id])
-    @user_activity.activity_id = @activity.id
-    @user_activity.user_id = current_user.id
+
+    @activity = Activity.find_by(id: params[:activity_id])
+    @user_activity.activity = @activity
+    @user_activity.user = current_user
     if @user_activity.save
       redirect_to user_path(current_user)
     else

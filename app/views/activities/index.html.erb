@@ -6,7 +6,7 @@
       If you add
       <%= activity.name %>
       you could earn X points per hour!
-      <%= link_to "Add #{activity.name}", edit_user_activity_path(activity), class: "button small right" %>
+      <%= link_to "Add #{activity.name}", new_user_activity_path(activity_id: activity.id), class: "button small right" %>
     <% else %>
       You already participate in <%= activity.name %>
     <% end %>
