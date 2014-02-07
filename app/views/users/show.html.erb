@@ -6,9 +6,11 @@
     <p>
       Points: <%= @user.total_points %>
     </p>
-    <p>
-      Favorite Activity:  <%= @user.favorite_activity %>
-    </p>
+    <% if @user.accomplishments.count > 0 %>
+      <p>
+        Favorite Activity:  <%= @user.favorite_activity %>
+      </p>
+    <% end %>
   </div>
 </div>
 
