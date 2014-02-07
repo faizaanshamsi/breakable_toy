@@ -18,8 +18,9 @@ feature "User adds accomplishment", %q{
     sign_in_as(user)
     visit user_path(user)
 
-    click_on 'Add Accomplishment'
-    fill_in 'Duration', with: 30
+    click_on 'Add New Accomplishment'
+    save_and_open_page
+    fill_in 'How many minutes?', with: 30
     click_on 'Submit'
 
     expect(page).to have_content "#{activity.name}"
