@@ -63,10 +63,6 @@ describe User do
       expect(user.total_points).to eql(100)
     end
 
-    it "should return a user's consistency" do
-      #Average weekly participation x/7 days
-    end
-
     it "should return a user's favorite activity" do
       #Activity with most accomplishments
       user = FactoryGirl.create(:user)

@@ -14,4 +14,24 @@ class Team < ActiveRecord::Base
   def total_points
     sum = points.all.inject(0) { |sum, point| sum + point.quantity }
   end
+
+  def rank
+    teams = Team.all
+    points = []
+    teams.each { |team| points << team.total_points }
+    points.sort! { |x, y| y <=> x }
+    rank = 1
+    points.each do |point|
+      if point <= total_points
+        next
+      end
+      rank += 1
+    end
+    rank
+  end
+
+  def weekly_score
+    points.where('created_at >= ?', 1.week.ago ).inject(0) { |sum, point| sum + point.quantity}
+  end
+
 end
