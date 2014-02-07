@@ -34,7 +34,7 @@ class User < ActiveRecord::Base
   end
 
   def recent_accomplishments
-    accomplishments.where('created_at >= ?', 1.week.ago )
+    accomplishments.order(created_at: :desc).limit(5)
   end
 
   def favorite_activity
