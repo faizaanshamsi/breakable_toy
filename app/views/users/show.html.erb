@@ -17,10 +17,11 @@
 <div class="row profile-activity">
   <h3 id="profile-subheading">My Activities:</h3>
   <% @activities.each do |activity| %>
-    <p>
+    <p class="small-12 column">
       I currently enjoy <%= activity.name %> regularly
-      <%= link_to "Remove", user_activity_path(@user_activities.find_by(activity_id: activity.id)), action: :destroy, method: :delete, class: "button small right remove-activity" %>
-      <%= link_to "Add New Accomplishment", new_accomplishment_path(activity_id: activity), class: "button small right" %>
+
+      <%= link_to "Remove", user_activity_path(@user_activities.find_by(activity_id: activity.id)), action: :destroy, method: :delete, class: "button small right remove-activity small-2 column" %>
+      <%= link_to "Add New Accomplishment", new_accomplishment_path(activity_id: activity), class: "button small right small-3 column" %>
     </p>
   <% end %>
   <br>
