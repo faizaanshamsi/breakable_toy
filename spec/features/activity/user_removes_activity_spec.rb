@@ -17,7 +17,10 @@ feature "User removes activity", %q{
     visit user_path(user)
 
     expect(page).to have_content("#{activity.name}")
-    click_on "Remove #{activity.name}"
-    expect(page).to_not have_content("#{activity.name}")
+    click_on "Remove"
+    save_and_open_page
+    within(".row.profile-activity") do
+      expect(page).to_not have_content("#{activity.name}")
+    end
   end
 end
